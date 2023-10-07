@@ -29,7 +29,7 @@ export default function App() {
   const handleTask = () => {
 
     if (!task) {
-      alert('Please add an item');
+      alert('Please add an items');
       return
     }
 
