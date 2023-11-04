@@ -1,7 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { Image, Keyboard, KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+
+// import dependencies from react and other library
+
+import {
+  Image,
+  Keyboard,
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
+} from 'react-native';
 import Tasks from './components/Tasks';
-import { useEffect, useState } from 'react';
+import {
+  useEffect,
+  useState
+} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -29,11 +43,12 @@ export default function App() {
   const handleTask = () => {
 
     if (!task) {
-      alert('Please add an items');
+      alert('Please add an item');
       return
     }
 
     Keyboard.dismiss();
+
     const newTask = {
       key: uuidv4(),
       text: task,
@@ -42,7 +57,6 @@ export default function App() {
 
     setTaskItems((currentItems) => [...currentItems, newTask]);
 
-    console.log(newTask)
     setTask('');
 
   }
